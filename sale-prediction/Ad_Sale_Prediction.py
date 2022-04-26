@@ -4,7 +4,7 @@ Created on Wed Mar 30 20:26:58 2022
 @author: rkvarma4518
 """
 
-"""Sale Prediction from Existing customer - Logistic Regression.ipynb
+"""Sale Prediction - Logistic Regression.ipynb
 
 
 ### *Importing Libraries*
