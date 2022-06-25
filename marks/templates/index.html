@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marks Prediction</title>
+</head>
+<style>
+    body {
+        background-color: black;
+        display: grid;
+        place-items: center;
+        width: 100%;
+        height: 100%;
+    }
+
+    .container {
+        width: 280px;
+        height: 450px;
+        background-color: azure;
+        padding: 50px;
+        border: 12px solid rgb(161, 187, 109);
+        display: grid;
+        place-items: center;
+    }
+
+    .input {
+        width: 220px;
+        height: 25px;
+        border: 2px solid grey;
+        border-radius: 5px;
+        padding: 0 20px 0 20px;
+
+    }
+
+    p {
+        width: 100%;
+        word-spacing: 3px;
+    }
+
+    .submit {
+        width: 100px;
+        height: 25px;
+        background-color: rgb(47, 47, 209);
+        border: 2px solid black;
+        border-radius: 5px;
+        color: white;
+        font-size: 18px;
+        font-weight: 300;
+        margin-top: 20px;
+    }
+    .print{
+        width: 100%;
+        height: 100%;
+        display: grid;
+        place-items: center;
+        align-items: center;
+    }
+</style>
+
+<body>
+    <div class="container">
+        <form action="{{ url_for('percent') }}" method="POST">
+            <div class="inputs">
+                <p>How many hours did you study</p>
+                <input type="text" class="input" name="study">
+                <br>
+                <br>
+                <p>What is your age</p>
+                <input type="text" class="input" name="age">
+                <br>
+                <br>
+                <p>How many hours you use internet</p>
+                <input type="text" class="input" name="internet">
+            </div>
+            <a href="{{ url_for('percent', filename='index.html') }}"><button type="submit" class="submit"
+                    value="Submit" name="Submit">Predict</button></a>
+        </form>
+
+        <br>
+        <br>
+        <div class="output">
+            <p>You will get Approximately</p>
+            <div class="print">
+                <p class="print">{{percent}}</p><p>{{symbol}}</p>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
